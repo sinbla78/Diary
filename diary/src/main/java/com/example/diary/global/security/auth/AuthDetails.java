@@ -1,5 +1,6 @@
 package com.example.diary.global.security.auth;
 
+import com.example.diary.domain.user.domain.User;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;

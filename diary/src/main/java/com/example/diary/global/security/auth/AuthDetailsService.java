@@ -1,5 +1,7 @@
 package com.example.diary.global.security.auth;
 
+import com.example.diary.domain.user.domain.repository.UserRepository;
+import com.example.diary.domain.user.exception.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
