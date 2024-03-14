@@ -1,29 +1,16 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${URL}:3306/emb?serverTimezone=Asia/Seoul
-    username: ${username}
-    password: ${password}
-
-  main:
-    allow-bean-definition-overriding: true
-
-  security:
-    jwt:
-      secret-key: ${JWT_SECRET_KEY}
-      access-exp: ${JWT_ACCESS_EXP}
-      refresh-exp: ${JWT_REFRESH_EXP}
-
+    url: jdbc:mysql://localhost:3306/${URL}?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: ${USERNAME}
+    password: ${PASSWORD}
   jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    generate-ddl: true
     hibernate:
       ddl-auto: update
-    show_sql: true
-
-logging:
-  level:
-    org.hibernate.SQL: debug
-    org.hibernate.type: trace
-    com.example.emb.domain.manager: debug
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+jwt:
+  secret: ${SECRET}
+  access_exp: ${ACCESS_EXP}
