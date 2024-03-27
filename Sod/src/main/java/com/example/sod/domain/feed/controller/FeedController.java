@@ -34,8 +34,7 @@ public class FeedController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/{feed-id}")
-    public void updateFeed(@PathVariable("feed-id") Long feedId,
-                           @RequestBody @Valid UpdateFeedRequest updateFeedRequest) {
+    public void updateFeed(@PathVariable("feed-id") Long feedId, @RequestBody @Valid UpdateFeedRequest updateFeedRequest) {
         updateFeedService.execute(feedId, updateFeedRequest);
     }
 }
