@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/users?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: root
-    password: yhm75040611?
+    url: ${URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
   jpa:
     database: mysql
@@ -15,12 +15,12 @@ spring:
     property-naming-strategy: SNAKE_CASE
 
   jwt:
-    header: Authorization
-    secret-key: your_actual_secret_key_here
-    access-exp: 3600 # Access token expiration time in seconds (e.g., 1 hour)
-    refresh-exp: 86400 # Refresh token expiration time in seconds (e.g., 1 day)
-    prefix: Bearer
+    header: ${HEADER}
+    secret-key: ${SECRET}
+    access-exp: ${ACCESS}
+    refresh-exp: ${REFRESH}
+    prefix: ${PREFIX}
 
   redis:
-    host: localhost
-    port: 6379
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
